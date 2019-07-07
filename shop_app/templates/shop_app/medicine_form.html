@@ -1,0 +1,22 @@
+{% extends 'shop_app/base.html' %}
+{% block sample %}
+<h1 class="qrt">
+  {% if not form.instance.pk %}
+  Add New Medicine
+  {% else %}
+  Update Medicine
+  {% endif %}
+</h1>
+<div class="jumbotron container">
+  <form  method="post">
+    {% csrf_token %}
+
+    {{form.as_p}}
+    
+    <input type="submit" class="btn btn-primary" value="submit">
+  </form>
+</div>
+
+
+
+{% endblock %}
